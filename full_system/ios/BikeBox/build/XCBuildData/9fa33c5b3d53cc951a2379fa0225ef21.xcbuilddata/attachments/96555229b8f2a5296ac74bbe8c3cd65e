@@ -1,0 +1,15 @@
+/Users/aniketdey/Documents/bikebox/ios/BikeBox/BikeBox/BikeBoxApp.swift
+/Users/aniketdey/Documents/bikebox/ios/BikeBox/BikeBox/Models/CrashAlert.swift
+/Users/aniketdey/Documents/bikebox/ios/BikeBox/BikeBox/Models/DeviceStatus.swift
+/Users/aniketdey/Documents/bikebox/ios/BikeBox/BikeBox/Services/BluetoothManager.swift
+/Users/aniketdey/Documents/bikebox/ios/BikeBox/BikeBox/Services/NotificationService.swift
+/Users/aniketdey/Documents/bikebox/ios/BikeBox/BikeBox/ViewModels/DashboardViewModel.swift
+/Users/aniketdey/Documents/bikebox/ios/BikeBox/BikeBox/ViewModels/PairingViewModel.swift
+/Users/aniketdey/Documents/bikebox/ios/BikeBox/BikeBox/Views/DashboardView.swift
+/Users/aniketdey/Documents/bikebox/ios/BikeBox/BikeBox/Views/PairingView.swift
+/Users/aniketdey/Documents/bikebox/ios/BikeBox/BikeBox/Views/AlertView.swift
+/Users/aniketdey/Documents/bikebox/ios/BikeBox/BikeBox/Views/SettingsView.swift
+/Users/aniketdey/Documents/bikebox/ios/BikeBox/BikeBox/Utilities/BLEConstants.swift
+/Users/aniketdey/Documents/bikebox/ios/BikeBox/BikeBox/Utilities/PayloadDecoder.swift
+/Users/aniketdey/Documents/bikebox/ios/BikeBox/BikeBox/Utilities/Extensions.swift
+/Users/aniketdey/Documents/bikebox/ios/BikeBox/build/BikeBox.build/Debug-iphonesimulator/BikeBox.build/DerivedSources/GeneratedAssetSymbols.swift

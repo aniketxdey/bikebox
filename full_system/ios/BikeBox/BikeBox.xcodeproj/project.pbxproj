@@ -1,0 +1,514 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1AD390312F58117800135BBC /* CrashClip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD390302F58117800135BBC /* CrashClip.swift */; };
+		1AD390332F58118E00135BBC /* ClipManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD390322F58118E00135BBC /* ClipManager.swift */; };
+		1AD390352F5811A100135BBC /* ClipFeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD390342F5811A100135BBC /* ClipFeedView.swift */; };
+		1AD390372F5811AC00135BBC /* ClipFeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD390362F5811AC00135BBC /* ClipFeedViewModel.swift */; };
+		1AD3903D2F590A8400135BBC /* LocalNetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD3903C2F590A8400135BBC /* LocalNetworkClient.swift */; };
+		3938445C94E97F70FAFF0063 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D14BA9A1D69E6242288047 /* LocationService.swift */; };
+		7E5B4F509053F4D7A2579BD9 /* AlertViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5914CAE925793A17C12EDB1 /* AlertViewModel.swift */; };
+		7F1047B08A6F3868599B1A42 /* EmergencyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65054B5B990A85EBBFC14A1C /* EmergencyService.swift */; };
+		9C894C0D97CC01653F9D451B /* EmergencyContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545F4AF5B342B4ADFACAB283 /* EmergencyContact.swift */; };
+		A100000000000000000001 /* BikeBoxApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100000000000000000001 /* BikeBoxApp.swift */; };
+		A100000000000000000002 /* CrashAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100000000000000000002 /* CrashAlert.swift */; };
+		A100000000000000000003 /* DeviceStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100000000000000000003 /* DeviceStatus.swift */; };
+		A100000000000000000004 /* BluetoothManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100000000000000000004 /* BluetoothManager.swift */; };
+		A100000000000000000005 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100000000000000000005 /* NotificationService.swift */; };
+		A100000000000000000006 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100000000000000000006 /* DashboardViewModel.swift */; };
+		A100000000000000000007 /* PairingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100000000000000000007 /* PairingViewModel.swift */; };
+		A100000000000000000008 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100000000000000000008 /* DashboardView.swift */; };
+		A100000000000000000009 /* PairingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100000000000000000009 /* PairingView.swift */; };
+		A10000000000000000000A /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000A /* AlertView.swift */; };
+		A10000000000000000000B /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000B /* SettingsView.swift */; };
+		A10000000000000000000C /* BLEConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000C /* BLEConstants.swift */; };
+		A10000000000000000000D /* PayloadDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000D /* PayloadDecoder.swift */; };
+		A10000000000000000000E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000E /* Extensions.swift */; };
+		A10000000000000000000F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000F /* Assets.xcassets */; };
+		A100000000000000000011 /* SensorSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100000000000000000011 /* SensorSample.swift */; };
+		A100000000000000000012 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100000000000000000012 /* UserProfile.swift */; };
+		A100000000000000000013 /* MotionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100000000000000000013 /* MotionService.swift */; };
+		A100000000000000000014 /* SensorDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100000000000000000014 /* SensorDataStore.swift */; };
+		A100000000000000000015 /* AnalyticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100000000000000000015 /* AnalyticsView.swift */; };
+		A100000000000000000016 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100000000000000000016 /* ProfileView.swift */; };
+		A100000000000000000017 /* AnalyticsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100000000000000000017 /* AnalyticsViewModel.swift */; };
+		AFE64DE991A8558D25068818 /* GracePeriodState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9F4BFD8E022689DB78917A /* GracePeriodState.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1AD390302F58117800135BBC /* CrashClip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrashClip.swift; sourceTree = "<group>"; };
+		1AD390322F58118E00135BBC /* ClipManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipManager.swift; sourceTree = "<group>"; };
+		1AD390342F5811A100135BBC /* ClipFeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipFeedView.swift; sourceTree = "<group>"; };
+		1AD390362F5811AC00135BBC /* ClipFeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipFeedViewModel.swift; sourceTree = "<group>"; };
+		1AD3903B2F58121100135BBC /* BikeBox.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BikeBox.entitlements; sourceTree = "<group>"; };
+		1AD3903C2F590A8400135BBC /* LocalNetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNetworkClient.swift; sourceTree = "<group>"; };
+		545F4AF5B342B4ADFACAB283 /* EmergencyContact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EmergencyContact.swift; path = BikeBox/Models/EmergencyContact.swift; sourceTree = SOURCE_ROOT; };
+		65054B5B990A85EBBFC14A1C /* EmergencyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EmergencyService.swift; path = BikeBox/Services/EmergencyService.swift; sourceTree = SOURCE_ROOT; };
+		B100000000000000000001 /* BikeBoxApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeBoxApp.swift; sourceTree = "<group>"; };
+		B100000000000000000002 /* CrashAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrashAlert.swift; sourceTree = "<group>"; };
+		B100000000000000000003 /* DeviceStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceStatus.swift; sourceTree = "<group>"; };
+		B100000000000000000004 /* BluetoothManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothManager.swift; sourceTree = "<group>"; };
+		B100000000000000000005 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		B100000000000000000006 /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
+		B100000000000000000007 /* PairingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairingViewModel.swift; sourceTree = "<group>"; };
+		B100000000000000000008 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		B100000000000000000009 /* PairingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairingView.swift; sourceTree = "<group>"; };
+		B10000000000000000000A /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
+		B10000000000000000000B /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		B10000000000000000000C /* BLEConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEConstants.swift; sourceTree = "<group>"; };
+		B10000000000000000000D /* PayloadDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayloadDecoder.swift; sourceTree = "<group>"; };
+		B10000000000000000000E /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		B10000000000000000000F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B100000000000000000010 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B100000000000000000011 /* SensorSample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorSample.swift; sourceTree = "<group>"; };
+		B100000000000000000012 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		B100000000000000000013 /* MotionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionService.swift; sourceTree = "<group>"; };
+		B100000000000000000014 /* SensorDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorDataStore.swift; sourceTree = "<group>"; };
+		B100000000000000000015 /* AnalyticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsView.swift; sourceTree = "<group>"; };
+		B100000000000000000016 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		B100000000000000000017 /* AnalyticsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsViewModel.swift; sourceTree = "<group>"; };
+		B5914CAE925793A17C12EDB1 /* AlertViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AlertViewModel.swift; path = BikeBox/ViewModels/AlertViewModel.swift; sourceTree = SOURCE_ROOT; };
+		C100000000000000000001 /* BikeBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BikeBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C1D14BA9A1D69E6242288047 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LocationService.swift; path = BikeBox/Services/LocationService.swift; sourceTree = SOURCE_ROOT; };
+		FC9F4BFD8E022689DB78917A /* GracePeriodState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GracePeriodState.swift; path = BikeBox/Models/GracePeriodState.swift; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D100000000000000000003 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1AD390382F5811E200135BBC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E100000000000000000001 = {
+			isa = PBXGroup;
+			children = (
+				E100000000000000000002 /* BikeBox */,
+				E100000000000000000008 /* Products */,
+				545F4AF5B342B4ADFACAB283 /* EmergencyContact.swift */,
+				FC9F4BFD8E022689DB78917A /* GracePeriodState.swift */,
+				C1D14BA9A1D69E6242288047 /* LocationService.swift */,
+				65054B5B990A85EBBFC14A1C /* EmergencyService.swift */,
+				B5914CAE925793A17C12EDB1 /* AlertViewModel.swift */,
+				1AD390382F5811E200135BBC /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		E100000000000000000002 /* BikeBox */ = {
+			isa = PBXGroup;
+			children = (
+				1AD3903B2F58121100135BBC /* BikeBox.entitlements */,
+				B100000000000000000001 /* BikeBoxApp.swift */,
+				E100000000000000000003 /* Models */,
+				E100000000000000000004 /* Services */,
+				E100000000000000000005 /* ViewModels */,
+				E100000000000000000006 /* Views */,
+				E100000000000000000007 /* Utilities */,
+				B10000000000000000000F /* Assets.xcassets */,
+				B100000000000000000010 /* Info.plist */,
+			);
+			path = BikeBox;
+			sourceTree = "<group>";
+		};
+		E100000000000000000003 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1AD390302F58117800135BBC /* CrashClip.swift */,
+				B100000000000000000002 /* CrashAlert.swift */,
+				B100000000000000000003 /* DeviceStatus.swift */,
+				B100000000000000000011 /* SensorSample.swift */,
+				B100000000000000000012 /* UserProfile.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E100000000000000000004 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				1AD3903C2F590A8400135BBC /* LocalNetworkClient.swift */,
+				1AD390322F58118E00135BBC /* ClipManager.swift */,
+				B100000000000000000004 /* BluetoothManager.swift */,
+				B100000000000000000005 /* NotificationService.swift */,
+				B100000000000000000013 /* MotionService.swift */,
+				B100000000000000000014 /* SensorDataStore.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		E100000000000000000005 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				1AD390362F5811AC00135BBC /* ClipFeedViewModel.swift */,
+				B100000000000000000006 /* DashboardViewModel.swift */,
+				B100000000000000000007 /* PairingViewModel.swift */,
+				B100000000000000000017 /* AnalyticsViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		E100000000000000000006 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1AD390342F5811A100135BBC /* ClipFeedView.swift */,
+				B100000000000000000008 /* DashboardView.swift */,
+				B100000000000000000009 /* PairingView.swift */,
+				B10000000000000000000A /* AlertView.swift */,
+				B10000000000000000000B /* SettingsView.swift */,
+				B100000000000000000015 /* AnalyticsView.swift */,
+				B100000000000000000016 /* ProfileView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E100000000000000000007 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				B10000000000000000000C /* BLEConstants.swift */,
+				B10000000000000000000D /* PayloadDecoder.swift */,
+				B10000000000000000000E /* Extensions.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		E100000000000000000008 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C100000000000000000001 /* BikeBox.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F100000000000000000001 /* BikeBox */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F200000000000000000002 /* Build configuration list for PBXNativeTarget "BikeBox" */;
+			buildPhases = (
+				D100000000000000000001 /* Sources */,
+				D100000000000000000002 /* Resources */,
+				D100000000000000000003 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BikeBox;
+			productName = BikeBox;
+			productReference = C100000000000000000001 /* BikeBox.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F100000000000000000010 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					F100000000000000000001 = {
+						CreatedOnToolsVersion = 15.4;
+					};
+				};
+			};
+			buildConfigurationList = F200000000000000000001 /* Build configuration list for PBXProject "BikeBox" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E100000000000000000001;
+			productRefGroup = E100000000000000000008 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F100000000000000000001 /* BikeBox */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D100000000000000000002 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A10000000000000000000F /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D100000000000000000001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A100000000000000000001 /* BikeBoxApp.swift in Sources */,
+				A100000000000000000002 /* CrashAlert.swift in Sources */,
+				A100000000000000000003 /* DeviceStatus.swift in Sources */,
+				1AD3903D2F590A8400135BBC /* LocalNetworkClient.swift in Sources */,
+				1AD390332F58118E00135BBC /* ClipManager.swift in Sources */,
+				A100000000000000000004 /* BluetoothManager.swift in Sources */,
+				A100000000000000000005 /* NotificationService.swift in Sources */,
+				A100000000000000000006 /* DashboardViewModel.swift in Sources */,
+				A100000000000000000007 /* PairingViewModel.swift in Sources */,
+				A100000000000000000008 /* DashboardView.swift in Sources */,
+				A100000000000000000009 /* PairingView.swift in Sources */,
+				A10000000000000000000A /* AlertView.swift in Sources */,
+				A10000000000000000000B /* SettingsView.swift in Sources */,
+				A10000000000000000000C /* BLEConstants.swift in Sources */,
+				A10000000000000000000D /* PayloadDecoder.swift in Sources */,
+				A10000000000000000000E /* Extensions.swift in Sources */,
+				9C894C0D97CC01653F9D451B /* EmergencyContact.swift in Sources */,
+				AFE64DE991A8558D25068818 /* GracePeriodState.swift in Sources */,
+				1AD390352F5811A100135BBC /* ClipFeedView.swift in Sources */,
+				1AD390372F5811AC00135BBC /* ClipFeedViewModel.swift in Sources */,
+				3938445C94E97F70FAFF0063 /* LocationService.swift in Sources */,
+				7F1047B08A6F3868599B1A42 /* EmergencyService.swift in Sources */,
+				7E5B4F509053F4D7A2579BD9 /* AlertViewModel.swift in Sources */,
+				A100000000000000000011 /* SensorSample.swift in Sources */,
+				A100000000000000000012 /* UserProfile.swift in Sources */,
+				A100000000000000000013 /* MotionService.swift in Sources */,
+				A100000000000000000014 /* SensorDataStore.swift in Sources */,
+				A100000000000000000015 /* AnalyticsView.swift in Sources */,
+				1AD390312F58117800135BBC /* CrashClip.swift in Sources */,
+				A100000000000000000016 /* ProfileView.swift in Sources */,
+				A100000000000000000017 /* AnalyticsViewModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		F300000000000000000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		F300000000000000000002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_VERSION = 5.0;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F300000000000000000003 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = BikeBox/BikeBox.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FJU26G3XGS;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = BikeBox/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(SRCROOT)/BikeBox/Models",
+					"$(SRCROOT)/BikeBox/Services",
+					"$(SRCROOT)/BikeBox/ViewModels",
+					"$(SRCROOT)/BikeBox/Views",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bikebox.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F300000000000000000004 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = BikeBox/BikeBox.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FJU26G3XGS;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = BikeBox/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(SRCROOT)/BikeBox/Models",
+					"$(SRCROOT)/BikeBox/Services",
+					"$(SRCROOT)/BikeBox/ViewModels",
+					"$(SRCROOT)/BikeBox/Views",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bikebox.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F200000000000000000001 /* Build configuration list for PBXProject "BikeBox" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F300000000000000000001 /* Debug */,
+				F300000000000000000002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F200000000000000000002 /* Build configuration list for PBXNativeTarget "BikeBox" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F300000000000000000003 /* Debug */,
+				F300000000000000000004 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F100000000000000000010 /* Project object */;
+}
