@@ -1,8 +1,5 @@
 <img width="1123" height="632" alt="Screenshot 2026-07-06 at 11 54 54 AM" src="https://github.com/user-attachments/assets/902ea2f5-127c-4989-86c4-884fb1789c3e" />
 
-
-<h1 align="center">BikeBox</h1>
-
 <p align="center">
   <b>An on-bike crash detection system: sensor fusion on a Raspberry Pi Zero 2,<br/>
   event-triggered video capture, and BLE-driven emergency dispatch through an iOS companion app.</b>
