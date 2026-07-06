@@ -1,6 +1,6 @@
-<p align="center">
-  <img src="readme_assets/title_slide.png" width="900" alt="BikeBox, Team 1" />
-</p>
+<img width="1124" height="632" alt="Screenshot 2026-07-06 at 11 53 40 AM" src="https://github.com/user-attachments/assets/c1ca66e7-2765-4983-89df-fc04cf22542f" />
+
+<h1 align="center">BikeBox</h1>
 
 <p align="center">
   <b>An on-bike crash detection system: sensor fusion on a Raspberry Pi Zero 2,<br/>
