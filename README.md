@@ -1,12 +1,10 @@
-<h1 align="center">BikeBox</h1>
+<p align="center">
+  <img src="readme_assets/title_slide.png" width="900" alt="BikeBox, Team 1" />
+</p>
 
 <p align="center">
   <b>An on-bike crash detection system: sensor fusion on a Raspberry Pi Zero 2,<br/>
   event-triggered video capture, and BLE-driven emergency dispatch through an iOS companion app.</b>
-</p>
-
-<p align="center">
-  <img src="readme_assets/title_slide.png" width="900" alt="BikeBox, Team 1" />
 </p>
 
 <p align="center">
