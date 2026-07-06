@@ -77,26 +77,10 @@ Tuning is data-driven. The CSV log (`timestamp, ax, ay, az, magnitude, gyro, eve
 
 ### Validation
 
-On a 90 s campus ride, three events crossed the 10 g threshold (an 11.7 g curb hop, a 19.2 g curb drop, a 15.6 g pothole) and none were crashes; Stage 2 rejected all three because the bike stayed upright. The staged wall collision registers 22.2 g, tilt climbs past 45° within 400 ms and holds above 80°, and the BLE alert lands on the iPhone in under 3 s.
-
 <p align="center">
   <img src="final_deliverables/normal_riding_dynamics.png" width="850" alt="Normal riding: three Stage-1 triggers above threshold, all rejected by Stage 2" />
   <img src="final_deliverables/front_crash_dynamics.png" width="850" alt="Front crash: 22.2 g impact, tilt holds past 45°, Stage 2 confirms" />
 </p>
-
-### Sensor pipeline
-
-**MPU-6050 driver ([`imu.py`](full_system/pi/imu.py)),** ~140 LOC over `smbus2`:
-
-- Wakes the sensor, sets a 44 Hz DLPF cutoff, ±16 g accel range, and ±2000°/s gyro range
-- Verifies `WHO_AM_I` against known-good clone IDs so it survives the noisy market of "MPU-6050" boards
-- Reads signed 16-bit registers, converts to g and °/s, applies per-axis calibration offsets
-
-```
-$ sudo i2cdetect -y 1
-50: -- -- -- -- -- -- -- 57 -- -- -- -- -- -- -- --     PiSugar 3
-60: -- -- -- -- -- -- -- -- -- 69 -- -- -- -- -- --     MPU-6050 (shifted)
-```
 
 ### Event-Triggered Video
 
@@ -133,11 +117,6 @@ Multi-function button on one GPIO input:
 | Grace Period | Read, Write, Notify | state + seconds remaining (writable to cancel) |
 | Hotspot Control | Read, Write, Notify | on-demand SoftAP control |
 
-### Future directions
-
-- **Learned detector.** 90 minutes of labeled ride data would be enough to train a small 1D-CNN on the accel+gyro traces and likely close the gap on medium-speed sideswipes.
-- **Frame-level analysis.** A lightweight OpenCV pass (optical flow, or a small MobileNet on the Pi's VideoCore) on the post-event tail could distinguish "crashed and stationary" from "crashed and still moving."
-- **Kalman tilt.** Fusing accel + gyro at 100 Hz would let the Stage 2 threshold drop from 45° toward 30° without inflating false positives.
 
 ---
 
