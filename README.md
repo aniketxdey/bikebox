@@ -1,4 +1,4 @@
-<img width="1124" height="632" alt="Screenshot 2026-07-06 at 11 53 40 AM" src="https://github.com/user-attachments/assets/c1ca66e7-2765-4983-89df-fc04cf22542f" />
+<img width="1123" height="632" alt="Screenshot 2026-07-06 at 11 54 54 AM" src="https://github.com/user-attachments/assets/c6c7aca9-dfef-45dc-a890-ca29d297f353" />
 
 <h1 align="center">BikeBox</h1>
 
@@ -57,14 +57,11 @@ Existing crash detection is tuned for cars and wrists, not bikes. In our own bas
 
 ### Two-stage detection
 
-The core algorithm in [`detector.py`](full_system/pi/detector.py) is deterministic and free of any learned model, so every threshold is auditable and every branch is unit-tested. Stage 1 asks "did something violent just happen?" on every sample; Stage 2 asks "is the bike actually down?" only after Stage 1 fires.
+The core algorithm in [`detector.py`](full_system/pi/detector.py) is deterministic and free of any learned model, so every threshold is auditable and every branch is unit-tested. 
 
-**Stage 1 is a dual-path trigger,** a small piece of sensor fusion. A single accelerometer threshold misses low-speed side tipovers, where peak acceleration stays low but angular velocity crosses 200°/s cleanly.
-
+**Stage 1 is a dual-path trigger,**; a single accelerometer threshold misses low-speed side tipovers, where peak acceleration stays low but angular velocity crosses 200°/s cleanly. Our model:
 - **Path A (hard impact):** acceleration magnitude `|a| > IMPACT_THRESHOLD`.
 - **Path B (slow tipover):** angular velocity `|ω| > GYRO_THRESHOLD` while `|a| > GYRO_ACCEL_MIN`.
-
-Either path can trigger, but both still require Stage 2 to confirm.
 
 **Stage 2 is the false-positive killer.** It waits 500 ms after impact, then requires tilt `θ = atan2(√(ax² + ay²), |az|)` to stay past 45° from vertical for a full 2 s. Bumps and braking spike the accelerometer but leave the bike upright, so Stage 2 rejects them.
 
@@ -91,11 +88,9 @@ On a 90 s campus ride, three events crossed the 10 g threshold (an 11.7 g curb h
 
 **MPU-6050 driver ([`imu.py`](full_system/pi/imu.py)),** ~140 LOC over `smbus2`:
 
-- Wakes the sensor, sets a 44 Hz DLPF cutoff, ±16 g accel range, and ±2000°/s gyro range.
-- Verifies `WHO_AM_I` against known-good clone IDs so it survives the noisy market of "MPU-6050" boards.
-- Reads signed 16-bit registers, converts to g and °/s, applies per-axis calibration offsets.
-
-Calibration averages 200 stationary samples at boot so a level device reads 1.0 g on Z. The PiSugar 3 UPS and the MPU-6050 both default to I2C `0x68`; tying the MPU's `AD0` pin to 3.3 V shifts it to `0x69` and resolves the collision.
+- Wakes the sensor, sets a 44 Hz DLPF cutoff, ±16 g accel range, and ±2000°/s gyro range
+- Verifies `WHO_AM_I` against known-good clone IDs so it survives the noisy market of "MPU-6050" boards
+- Reads signed 16-bit registers, converts to g and °/s, applies per-axis calibration offsets
 
 ```
 $ sudo i2cdetect -y 1
@@ -103,7 +98,7 @@ $ sudo i2cdetect -y 1
 60: -- -- -- -- -- -- -- -- -- 69 -- -- -- -- -- --     MPU-6050 (shifted)
 ```
 
-### Event-triggered video
+### Event-Triggered Video
 
 [`camera.py`](full_system/pi/camera.py) uses `libcamera` / `picamera2` with a `CircularOutput` sink over an `H264Encoder`. The hardware encoder writes continuously into a 20 s RAM ring; nothing hits the SD card until the detector calls `save_clip()`, which flushes the pre-event buffer, records a 5 s post-event tail, and remuxes to MP4. This is the same save-on-trigger pattern as a robot's onboard log.
 
@@ -115,11 +110,11 @@ self._picam.start_recording(self._encoder, self._output)
 
 Clips are served over an on-demand SoftAP hotspot (`hotspot.py` + `clip_server.py`) that the phone raises via a BLE characteristic and that auto-tears-down after 5 minutes idle.
 
-### Embedded runtime
+### Embedded Runtime
 
 `main.py` initializes eight subsystems in order under systemd (`Restart=on-failure`, hardened filesystem paths); any failure drops into a clean shutdown path.
 
-**Multi-function button** on one GPIO input:
+Multi-function button on one GPIO input:
 
 - Short press (< 1.0 s): safe shutdown.
 - Dead zone (1.0 to 3.0 s): ignored, prevents ambiguous inputs.
