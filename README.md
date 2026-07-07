@@ -15,7 +15,6 @@
     &nbsp;·&nbsp;
     <a href="final_deliverables/Team%201%20-%20BikeBox%20-%20Final%20Presentation.pdf">Presentation Deck (PDF)</a>
     &nbsp;·&nbsp;
-    <a href="IMPLEMENTATION.md">Full Implementation Guide</a>
   </sub>
 </p>
 
