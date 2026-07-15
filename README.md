@@ -28,9 +28,8 @@ The core problem? Solo cyclists on isolated roads have no automatic way to call 
 
 Existing solutions fall short. Phone-based crash detection targets car crashes doesn't account for tilt or orientation. Our baseline testing with Apple Find My yielded zero percent accuracy, failing to trigger even at 27 g's, more than enough to hurt someone. Wearable options like Garmin and Fitbit rely on wrist motion, don't capture bike-specific dynamics, and require a $300-plus smartwatch.
 
-That's why we built **BikeBox**: a bicycle-mounted 'black box' that automatically detects crashes and alerts emergency contacts, giving road cyclists and their families peace of mind on every ride.
+That's why we built **BikeBox**: a bicycle-mounted 'black box' that *automatically* detects crashes and alerts emergency contacts, giving road cyclists and their families peace of mind on every ride.
 
-Existing crash detection is tuned for cars and wrists, not bikes. In our baseline testing, Apple FindMy did not fire even with a 
 
 ---
 
