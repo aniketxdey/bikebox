@@ -36,7 +36,7 @@ That's why we built **BikeBox**: a bicycle-mounted 'black box' that *automatical
 ## How It Works
 
 <p align="center">
-  https://github.com/user-attachments/assets/b5cbd0bf-aa93-4c80-8cc9-b738d834c615 
+ <vid src= "https://github.com/user-attachments/assets/b5cbd0bf-aa93-4c80-8cc9-b738d834c615" />
 <p align="center">
 
 <p align="center">
