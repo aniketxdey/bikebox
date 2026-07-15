@@ -35,9 +35,6 @@ That's why we built **BikeBox**: a bicycle-mounted 'black box' that *automatical
 
 ## How It Works
 
-<div align="center">
-  <video src="https://github.com/user-attachments/assets/b5cbd0bf-aa93-4c80-8cc9-b738d834c615" width="900" controls muted playsinline></video>
-</div>
 
 <p align="center">
   <img src="assets/slide_how_it_works.png" width="900" alt="Two-stage detection triggers a crash alert to the phone, with a 30-second cancel window before emergency dialing." />
@@ -47,6 +44,10 @@ That's why we built **BikeBox**: a bicycle-mounted 'black box' that *automatical
 2. An alert reaches the paired iPhone over Bluetooth Low Energy in under 3 seconds.
 3. The rider gets a 30-second window to cancel a false alarm (physical button or in-app).
 4. If uncancelled, the phone dispatches a GPS-tagged emergency message and the device saves the video clip of the crash.
+
+<div align="center">
+  <video src="https://github.com/user-attachments/assets/b5cbd0bf-aa93-4c80-8cc9-b738d834c615" width="900" controls muted playsinline></video>
+</div>
 
 **Specs**
 
