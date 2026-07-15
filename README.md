@@ -35,9 +35,9 @@ That's why we built **BikeBox**: a bicycle-mounted 'black box' that *automatical
 
 ## How It Works
 
-Ride, tipover, on-device detection, BLE alert to the iPhone, and cancellation via the physical button.
 
-https://github.com/aniketdey/bikebox/raw/main/deliverables/demo.mp4
+https://github.com/user-attachments/assets/b5cbd0bf-aa93-4c80-8cc9-b738d834c615
+
 
 <p align="center">
   <img src="assets/slide_how_it_works.png" width="900" alt="Two-stage detection triggers a crash alert to the phone, with a 30-second cancel window before emergency dialing." />
@@ -161,7 +161,7 @@ Pairing, Dashboard (live device state), Alert (countdown ring with "I'M OK"), An
 
 The 20 s pre-event rolling buffer plus a 5 s post-event tail, dumped to disk the instant the detector fires.
 
-https://github.com/aniketdey/bikebox/raw/main/deliverables/crash_cam_compressed.mp4
+https://github.com/user-attachments/assets/91500636-1da7-42cf-9f01-67131091d9fb
 
 
 ### Field results
