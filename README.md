@@ -37,7 +37,7 @@ That's why we built **BikeBox**: a bicycle-mounted 'black box' that *automatical
 
 <p align="center">
  <vid src= "https://github.com/user-attachments/assets/b5cbd0bf-aa93-4c80-8cc9-b738d834c615" />
-<p align="center">
+ </vid>p>
 
 <p align="center">
   <img src="assets/slide_how_it_works.png" width="900" alt="Two-stage detection triggers a crash alert to the phone, with a 30-second cancel window before emergency dialing." />
