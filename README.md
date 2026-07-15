@@ -11,9 +11,9 @@
   <sub>
     Dartmouth ENGS 21, Team 1
     &nbsp;·&nbsp;
-    <a href="final_deliverables/Team%201%20ENGS%2021%20-%20Final%20Report.pdf">Final Report (PDF)</a>
+    <a href="deliverables/Team%201%20ENGS%2021%20-%20Final%20Report.pdf">Final Report (PDF)</a>
     &nbsp;·&nbsp;
-    <a href="final_deliverables/Team%201%20-%20BikeBox%20-%20Final%20Presentation.pdf">Presentation Deck (PDF)</a>
+    <a href="deliverables/Team%201%20-%20BikeBox%20-%20Final%20Presentation.pdf">Presentation Deck (PDF)</a>
     &nbsp;·&nbsp;
   </sub>
 </p>
@@ -35,8 +35,12 @@ That's why we built **BikeBox**: a bicycle-mounted 'black box' that *automatical
 
 ## How It Works
 
+Ride, tipover, on-device detection, BLE alert to the iPhone, and cancellation via the physical button.
+
+https://github.com/aniketdey/bikebox/raw/main/deliverables/demo.mp4
+
 <p align="center">
-  <img src="readme_assets/slide_how_it_works.png" width="900" alt="Two-stage detection triggers a crash alert to the phone, with a 30-second cancel window before emergency dialing." />
+  <img src="assets/slide_how_it_works.png" width="900" alt="Two-stage detection triggers a crash alert to the phone, with a 30-second cancel window before emergency dialing." />
 </p>
 
 1. A two-stage algorithm detects the crash on-device from the IMU stream.
@@ -59,7 +63,7 @@ That's why we built **BikeBox**: a bicycle-mounted 'black box' that *automatical
 
 ### Two-stage detection
 
-The core algorithm in [`detector.py`](full_system/pi/detector.py) is free of any learned model, so every threshold is auditable and every branch is unit-tested. 
+The core algorithm in [`detector.py`](src/pi/detector.py) is free of any learned model, so every threshold is auditable and every branch is unit-tested. 
 
 **Stage 1 is a dual-path trigger,**; a single accelerometer threshold misses low-speed side tipovers, where peak acceleration stays low but angular velocity crosses 200°/s cleanly. Our model:
 - **Path A (hard impact):** acceleration magnitude `|a| > IMPACT_THRESHOLD`.
@@ -78,13 +82,13 @@ SUSTAINED_TILT_TIME = 2.0      # s,   Stage 2 duration
 ### Validation
 
 <p align="center">
-  <img src="final_deliverables/normal_riding_dynamics.png" width="850" alt="Normal riding: three Stage-1 triggers above threshold, all rejected by Stage 2" />
-  <img src="final_deliverables/front_crash_dynamics.png" width="850" alt="Front crash: 22.2 g impact, tilt holds past 45°, Stage 2 confirms" />
+  <img src="deliverables/normal_riding_dynamics.png" width="850" alt="Normal riding: three Stage-1 triggers above threshold, all rejected by Stage 2" />
+  <img src="deliverables/front_crash_dynamics.png" width="850" alt="Front crash: 22.2 g impact, tilt holds past 45°, Stage 2 confirms" />
 </p>
 
 ### Event-Triggered Video
 
-[`camera.py`](full_system/pi/camera.py) uses `libcamera` / `picamera2` with a `CircularOutput` sink over an `H264Encoder`. The hardware encoder writes continuously into a 20 s RAM ring; nothing hits the SD card until the detector calls `save_clip()`, which flushes the pre-event buffer, records a 5 s post-event tail, and remuxes to MP4. This is the same save-on-trigger pattern as a robot's onboard log.
+[`camera.py`](src/pi/camera.py) uses `libcamera` / `picamera2` with a `CircularOutput` sink over an `H264Encoder`. The hardware encoder writes continuously into a 20 s RAM ring; nothing hits the SD card until the detector calls `save_clip()`, which flushes the pre-event buffer, records a 5 s post-event tail, and remuxes to MP4. This is the same save-on-trigger pattern as a robot's onboard log.
 
 ```python
 buffer_frames = VIDEO_FRAMERATE * CIRCULAR_BUFFER_SECONDS   # 30 fps × 20 s
@@ -108,16 +112,16 @@ Clips are served over an on-demand SoftAP hotspot (`hotspot.py` + `clip_server.p
 - Dead zone (1.0 to 3.0 s): ignored, prevents ambiguous inputs
 - Long hold (≥ 3.0 s): cancel an active crash alert
 
-**Grace Period Logic ([`alert.py`](full_system/pi/alert.py)):** on a confirmed crash, `on_crash()` reads battery, saves the clip on a background thread, emits `ALERT_CRASH_DETECTED` over BLE, then runs a 30 s countdown polling the button and BLE cancel flag at 10 Hz. A cancel emits `ALERT_CRASH_CANCELLED`; a timeout emits `ALERT_CRASH_CONFIRMED`, which triggers the iOS SMS escalation.
+**Grace Period Logic ([`alert.py`](src/pi/alert.py)):** on a confirmed crash, `on_crash()` reads battery, saves the clip on a background thread, emits `ALERT_CRASH_DETECTED` over BLE, then runs a 30 s countdown polling the button and BLE cancel flag at 10 Hz. A cancel emits `ALERT_CRASH_CANCELLED`; a timeout emits `ALERT_CRASH_CONFIRMED`, which triggers the iOS SMS escalation.
 
-**BLE peripheral ([`ble_server.py`](full_system/pi/ble_server.py)):** a BlueZ D-Bus server running its own GLib loop in a background thread so the detector stays hot. Payloads are little-endian `struct`-packed to match the iOS decoder.
+**BLE peripheral ([`ble_server.py`](src/pi/ble_server.py)):** a BlueZ D-Bus server running its own GLib loop in a background thread so the detector stays hot. Payloads are little-endian `struct`-packed to match the iOS decoder.
 
 ---
 
 ## Hardware
 
 <p align="center">
-  <img src="readme_assets/slide_device.png" width="900" alt="Final device: Raspberry Pi Zero 2 W, MPU-6050 IMU, ArduCam 5MP, blue LED cancel button, foam-lined 5mm PLA enclosure, 224 g total, FEA-verified under 40 g load" />
+  <img src="assets/slide_device.png" width="900" alt="Final device: Raspberry Pi Zero 2 W, MPU-6050 IMU, ArduCam 5MP, blue LED cancel button, foam-lined 5mm PLA enclosure, 224 g total, FEA-verified under 40 g load" />
 </p>
 
 The 224 g device packs a Raspberry Pi Zero 2 W, MPU-6050 IMU (100 Hz), ArduCam 5MP wide-angle camera, PiSugar 3 UPS, and an illuminated cancel button into a foam-lined 5 mm PLA enclosure, camera and button rear-facing. FEA confirmed the frame stays within PLA yield strength under a 40 g load. The Pi carries no GPS radio; the iPhone supplies the location fix at the moment of alert, which drops an antenna and keeps the Pi under 1.5 W.
@@ -127,7 +131,7 @@ The 224 g device packs a Raspberry Pi Zero 2 W, MPU-6050 IMU (100 Hz), ArduCam 5
 ## iOS App
 
 <p align="center">
-  <img src="readme_assets/slide_app.png" width="900" alt="iOS app: home dashboard, analytics with acceleration and tilt charts, and downloadable crash clips" />
+  <img src="assets/slide_app.png" width="900" alt="iOS app: home dashboard, analytics with acceleration and tilt charts, and downloadable crash clips" />
 </p>
 
 #### Screens
@@ -135,9 +139,9 @@ The 224 g device packs a Raspberry Pi Zero 2 W, MPU-6050 IMU (100 Hz), ArduCam 5
 Pairing, Dashboard (live device state), Alert (countdown ring with "I'M OK"), Analytics (impact history + charts), Clip Feed (crash videos over the hotspot), and Profile (emergency contacts).
 
 <p align="center">
-  <img src="readme_assets/app_dashboard.jpg" height="360" alt="iOS dashboard: connected over BLE, monitoring active, live battery and GPS" />
+  <img src="assets/app_dashboard.jpg" height="360" alt="iOS dashboard: connected over BLE, monitoring active, live battery and GPS" />
   &nbsp;
-  <img src="readme_assets/alert_cancelled.jpg" height="360" alt="Alert cancelled screen after physical button long-hold" />
+  <img src="assets/alert_cancelled.jpg" height="360" alt="Alert cancelled screen after physical button long-hold" />
 </p>
 
 #### Background BLE
@@ -153,32 +157,26 @@ Pairing, Dashboard (live device state), Alert (countdown ring with "I'M OK"), An
 
 ## Testing & Demos
 
-### End-to-end demo
-
-Ride, tipover, on-device detection, BLE alert to the iPhone, and cancellation via the physical button.
-
-https://github.com/aniketdey/bikebox/raw/main/readme_assets/demo.mp4
-
 ### Onboard crash-cam clip
 
 The 20 s pre-event rolling buffer plus a 5 s post-event tail, dumped to disk the instant the detector fires.
 
-https://github.com/aniketdey/bikebox/raw/main/readme_assets/crash_cam.mp4
+https://github.com/aniketdey/bikebox/raw/main/deliverables/crash_cam_compressed.mp4
 
 
 ### Field results
 
 <p align="center">
-  <img src="readme_assets/slide_testing.png" width="900" alt="Simulated crash testing: 0 false positives on normal riding, 5/5 crashes detected on 2 m wall collisions" />
+  <img src="assets/slide_testing.png" width="900" alt="Simulated crash testing: 0 false positives on normal riding, 5/5 crashes detected on 2 m wall collisions" />
 </p>
 
 0 false positives across 10 normal-riding events and 5/5 detections on staged wall collisions, both within the ≤10% spec. Every ride was logged with `--log` and analyzed offline.
 
 <p align="center">
-  <img src="readme_assets/field_test_ride.jpg" height="330" alt="Field test: riding the instrumented bike" />
+  <img src="assets/field_test_ride.jpg" height="330" alt="Field test: riding the instrumented bike" />
   &nbsp;
-  <img src="readme_assets/bike_downed_1.jpg" height="330" alt="Post-impact: bike on the ground, phone showing the grace-period countdown" />
+  <img src="assets/bike_downed_1.jpg" height="330" alt="Post-impact: bike on the ground, phone showing the grace-period countdown" />
 </p>
 
 
-<sub>Build and deployment (SD card to field testing) is in [IMPLEMENTATION.md](IMPLEMENTATION.md). Built for Dartmouth ENGS 21, Winter 2026, by Team 1: Julian Vu, Mason Shriver, Aniket Dey, and Victory Igwe.</sub>
+<sub>Built for Dartmouth ENGS 21, Winter 2026, by Team 1: Julian Vu, Mason Shriver, Aniket Dey, and Victory Igwe.</sub>
