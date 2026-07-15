@@ -22,7 +22,7 @@
 
 ## Problem
 
-Cyclists on isolated roads have no automatic way to call for help if a crash knocks them out. There were 1,377 US bicycle fatalities in 2023, up 53% in a decade alone. As the ['National Safety Council'](https://injuryfacts.nsc.org/home-and-community/safety-topics/bicycle-deaths/) puts it: "Preventable deaths have risen while nonfatal injuries continue to decline by 29%, indicating a need for better emergency infrastructure to prevent fatalities."
+Cyclists on isolated roads have no automatic way to call for help if a crash knocks them out. There were 1,377 US bicycle fatalities in 2023, up 53% in a decade alone. As the [National Safety Council](https://injuryfacts.nsc.org/home-and-community/safety-topics/bicycle-deaths/) puts it: "Preventable deaths have risen while nonfatal injuries continue to decline by 29%, indicating a need for better emergency infrastructure to prevent fatalities."
 
 The core problem? Solo cyclists on isolated roads have no automatic way to call for help if injured, turning survivable injuries into fatal outcomes due to delayed emergency responses.
 
