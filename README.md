@@ -22,9 +22,15 @@
 
 ## Problem
 
-Solo cyclists on isolated roads have no automatic way to call for help if a crash knocks them out. There were 1,377 US bicycle fatalities in 2023, up 53% in a decade, and minutes matter in emergency response.
+Cyclists on isolated roads have no automatic way to call for help if a crash knocks them out. There were 1,377 US bicycle fatalities in 2023, up 53% in a decade alone. As the ['National Safety Council'](https://injuryfacts.nsc.org/home-and-community/safety-topics/bicycle-deaths/) puts it: "Preventable deaths have risen while nonfatal injuries continue to decline by 29%, indicating a need for better emergency infrastructure to prevent fatalities."
 
-Existing crash detection is tuned for cars and wrists, not bikes. In our own baseline testing, Apple Find My did not fire even at a measured 27.6 g bicycle wall impact. BikeBox is a seat-tube-mounted device that watches the bike's own motion and calls for help when the rider cannot.
+The core problem? Solo cyclists on isolated roads have no automatic way to call for help if injured, turning survivable injuries into fatal outcomes due to delayed emergency responses.
+
+Existing solutions fall short. Phone-based crash detection targets car crashes doesn't account for tilt or orientation. Our baseline testing with Apple Find My yielded zero percent accuracy, failing to trigger even at 27 g's, more than enough to hurt someone. Wearable options like Garmin and Fitbit rely on wrist motion, don't capture bike-specific dynamics, and require a $300-plus smartwatch.
+
+That's why we built **BikeBox**: a bicycle-mounted 'black box' that automatically detects crashes and alerts emergency contacts, giving road cyclists and their families peace of mind on every ride.
+
+Existing crash detection is tuned for cars and wrists, not bikes. In our baseline testing, Apple FindMy did not fire even with a 
 
 ---
 
@@ -42,7 +48,7 @@ Existing crash detection is tuned for cars and wrists, not bikes. In our own bas
 ### Results at a glance
 
 | Metric | Value |
-| --- | --- | --- |
+| --- | --- |
 | False positive rate | **0 / 20 events (0%)** on a 90 s ride with bumps, curb hops, hard braking |
 | Detection on a 2 m wall collision | Confirmed in **< 3 s** end to end (impact to BLE alert on iPhone) |
 | IMU sample rate | **100 Hz**, 6-axis (MPU-6050 over I2C at 400 kHz) |
