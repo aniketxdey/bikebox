@@ -44,7 +44,7 @@ That's why we built **BikeBox**: a bicycle-mounted 'black box' that *automatical
 3. The rider gets a 30-second window to cancel a false alarm (physical button or in-app).
 4. If uncancelled, the phone dispatches a GPS-tagged emergency message and the device saves the video clip of the crash.
 
-### Results at a glance
+**Specs**
 
 | Metric | Value |
 | --- | --- |
